@@ -113,10 +113,10 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --filter-udp=5055,5056,27001,27002 ^
 --out-range=-n4 ^
 --payload=all ^
---lua-desync=fake:blob=quic_yandex:repeats=12:payload=all ^
+--lua-desync=fake:blob=game_udp:repeats=12:payload=all ^
 --new ^
 
---name="gamefilter tcp" ^
+--name="gamefiltertcp" ^
 --filter-tcp=%GameFilterTCP% ^
 --ipset="%LISTS%ipset-all.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
@@ -131,7 +131,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --lua-desync=multisplit:pos=1:seqovl=659:seqovl_pattern=tls_vk ^
 --new ^
 
---name="gamefilter udp" ^
+--name="gamefilterudp" ^
 --filter-udp=%GameFilterUDP% ^
 --ipset="%LISTS%ipset-all.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^

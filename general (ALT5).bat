@@ -61,7 +61,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" --wf-tcp-empty=1 ^
 --filter-udp=5055,5056,27001,27002 ^
 --out-range=-n4 ^
 --payload=all ^
---lua-desync=fake:blob=quic_yandex:repeats=12:payload=all ^
+--lua-desync=fake:blob=game_udp:repeats=12:payload=all ^
 --new ^
 
 --name="gamefiltertcp" ^
