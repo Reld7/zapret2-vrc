@@ -52,14 +52,14 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" --wf-tcp-empty=1 ^
 --filter-tcp=2053,2083,2087,2096,8443 ^
 --hostlist-domains=discord.media ^
 --payload=tls_client_hello ^
---lua-desync=multisplit:pos=2,sniext+1:seqovl=679:seqovl_pattern=tls_google ^
+--lua-desync=multisplit:pos=2,sniext+1:seqovl=670:seqovl_pattern=tls_google ^
 --new ^
 
 --name="youtube" ^
 --filter-tcp=443 ^
 --hostlist="%LISTS%list-google.txt" ^
 --payload=tls_client_hello ^
---lua-desync=multisplit:pos=2,sniext+1:seqovl=679:seqovl_pattern=tls_google:ip_id=zero ^
+--lua-desync=multisplit:pos=2,sniext+1:seqovl=670:seqovl_pattern=tls_google:ip_id=zero ^
 --new ^
 
 --name="domain tls" ^
@@ -71,9 +71,9 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" --wf-tcp-empty=1 ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
---lua-desync=multisplit:pos=2,sniext+1:seqovl=679:seqovl_pattern=tls_google ^
+--lua-desync=multisplit:pos=2,sniext+1:seqovl=670:seqovl_pattern=tls_google ^
 --payload=http_req ^
---lua-desync=multisplit:pos=2:seqovl=679:seqovl_pattern=tls_google ^
+--lua-desync=multisplit:pos=2:seqovl=670:seqovl_pattern=tls_google ^
 --new ^
 
 --name="ip quic" ^

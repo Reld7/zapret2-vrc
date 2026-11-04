@@ -76,10 +76,10 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
 --lua-desync=fake:blob=tls_vk:repeats=4:tcp_ts=-600000 ^
---lua-desync=multisplit:pos=1:seqovl=480:seqovl_pattern=stun2 ^
+--lua-desync=multisplit:pos=1:seqovl=384:seqovl_pattern=stun2 ^
 --payload=http_req ^
 --lua-desync=fake:blob=tls_vk:repeats=4:tcp_ts=-600000 ^
---lua-desync=multisplit:pos=1:seqovl=480:seqovl_pattern=stun2 ^
+--lua-desync=multisplit:pos=1:seqovl=384:seqovl_pattern=stun2 ^
 --new ^
 
 --name="ip quic" ^
@@ -103,10 +103,10 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
 --lua-desync=fake:blob=tls_vk:repeats=4:tcp_ts=-600000 ^
---lua-desync=multisplit:pos=1:seqovl=480:seqovl_pattern=stun2 ^
+--lua-desync=multisplit:pos=1:seqovl=384:seqovl_pattern=stun2 ^
 --payload=http_req ^
 --lua-desync=fake:blob=tls_vk:repeats=4:tcp_ts=-600000 ^
---lua-desync=multisplit:pos=1:seqovl=480:seqovl_pattern=stun2 ^
+--lua-desync=multisplit:pos=1:seqovl=384:seqovl_pattern=stun2 ^
 --new ^
 
 --name="photonengine udp" ^
@@ -128,7 +128,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --lua-desync=multisplit:pos=1:seqovl=659:seqovl_pattern=tls_vk:payload=tls_client_hello,unknown ^
 --payload=http_req ^
 --lua-desync=fake:blob=tls_vk:repeats=4:tcp_ts=-600000 ^
---lua-desync=multisplit:pos=1:seqovl=480:seqovl_pattern=stun2 ^
+--lua-desync=multisplit:pos=1:seqovl=384:seqovl_pattern=stun2 ^
 --new ^
 
 --name="gamefilterudp" ^

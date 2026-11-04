@@ -51,14 +51,14 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --filter-tcp=2053,2083,2087,2096,8443 ^
 --hostlist-domains=discord.media ^
 --payload=tls_client_hello ^
---lua-desync=multisplit:pos=2:seqovl=652:seqovl_pattern=tls_google ^
+--lua-desync=multisplit:pos=2:seqovl=670:seqovl_pattern=tls_google ^
 --new ^
 
 --name="youtube" ^
 --filter-tcp=443 ^
 --hostlist="%LISTS%list-google.txt" ^
 --payload=tls_client_hello ^
---lua-desync=multisplit:pos=2:seqovl=652:seqovl_pattern=tls_google:ip_id=zero ^
+--lua-desync=multisplit:pos=2:seqovl=670:seqovl_pattern=tls_google:ip_id=zero ^
 --new ^
 
 --name="domain tls" ^
@@ -70,7 +70,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello,http_req ^
---lua-desync=multisplit:pos=2:seqovl=652:seqovl_pattern=tls_google ^
+--lua-desync=multisplit:pos=2:seqovl=670:seqovl_pattern=tls_google ^
 --new ^
 
 --name="ip quic" ^
@@ -92,7 +92,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello,http_req ^
---lua-desync=multisplit:pos=2:seqovl=652:seqovl_pattern=tls_google ^
+--lua-desync=multisplit:pos=2:seqovl=670:seqovl_pattern=tls_google ^
 --new ^
 
 --name="photonengine udp" ^
@@ -109,7 +109,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --out-range=-n3 ^
 --payload=tls_client_hello,http_req,unknown ^
---lua-desync=multisplit:pos=2:seqovl=652:seqovl_pattern=tls_google:payload=tls_client_hello,http_req,unknown ^
+--lua-desync=multisplit:pos=2:seqovl=670:seqovl_pattern=tls_google:payload=tls_client_hello,http_req,unknown ^
 --new ^
 
 --name="gamefilterudp" ^
