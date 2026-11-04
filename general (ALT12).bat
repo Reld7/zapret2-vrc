@@ -21,7 +21,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --lua-init=@"%LUA%zapret-auto.lua" ^
 --blob=quic_google:@"%BIN%quic_initial_www_google_com.bin" ^
 --blob=quic_yandex:@"%BIN%quic_initial_quic_egress_yandex_net_no_kyber_ff.bin" ^
---blob=stun_bin:@"%BIN%stun.bin" ^
+--blob=stun1:@"%BIN%stun.bin" ^
 --blob=discord_udp:@"%BIN%ACTIVE_DISCORD_UDP.bin" ^
 --blob=game_udp:@"%BIN%ACTIVE_GAME_UDP.bin" ^
 --blob=tls_google:@"%BIN%tls_clienthello_www_google_com.bin" ^
@@ -46,7 +46,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --filter-udp=19294-19344,50000-50100 ^
 --filter-l7=discord,stun ^
 --payload=discord_ip_discovery,stun ^
---lua-desync=fake:blob=stun_bin:repeats=3 ^
+--lua-desync=fake:blob=stun1:repeats=3 ^
 --lua-desync=fake:blob=discord_udp:repeats=3 ^
 --new ^
 
@@ -74,7 +74,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
---lua-desync=fake:blob=stun_bin:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_vk:repeats=8:tcp_ts=-600000 ^
 --lua-desync=multisplit:pos=1:seqovl=659:seqovl_pattern=tls_vk ^
 --payload=http_req ^
@@ -101,7 +101,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
---lua-desync=fake:blob=stun_bin:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_vk:repeats=8:tcp_ts=-600000 ^
 --lua-desync=multisplit:pos=1:seqovl=659:seqovl_pattern=tls_vk ^
 --payload=http_req ^
@@ -121,11 +121,11 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset="%LISTS%ipset-all.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
---out-range=-n4 ^
+--out-range=-d4 ^
 --payload=tls_client_hello,unknown ^
---lua-desync=fake:blob=stun_bin:repeats=8:tcp_ts=-600000:payload=tls_client_hello,unknown ^
+--lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000:payload=tls_client_hello,unknown ^
 --lua-desync=fake:blob=tls_vk:repeats=8:tcp_ts=-600000:payload=tls_client_hello,unknown ^
---lua-desync=multisplit:pos=1:seqovl=659:seqovl_pattern=tls_vk:payload=tls_client_hello,unknown ^
+--lua-desync=multisplit:pos=1:seqovl=659:seqovl_pattern=tls_vk:payload=tls_client_hello ^
 --payload=http_req ^
 --lua-desync=fake:blob=tls_vk:repeats=8:tcp_ts=-600000 ^
 --lua-desync=multisplit:pos=1:seqovl=659:seqovl_pattern=tls_vk ^

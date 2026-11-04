@@ -108,7 +108,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset="%LISTS%ipset-all.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
---out-range=-n3 ^
+--out-range=-d3 ^
 --payload=tls_client_hello,unknown ^
 --lua-desync=multisplit:pos=1:seqovl=568:seqovl_pattern=tls_4pda:payload=tls_client_hello,unknown ^
 --new ^

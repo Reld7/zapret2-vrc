@@ -116,7 +116,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset="%LISTS%ipset-all.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
---out-range=-n4 ^
+--out-range=-d4 ^
 --payload=tls_client_hello,unknown ^
 --lua-desync=fake:blob=tls_vk:tls_mod=rnd,dupsid,sni=api.vk.ru:repeats=6:tcp_ts=-600000:payload=tls_client_hello,unknown ^
 --lua-desync=hostfakesplit:host=api.vk.ru:midhost=midsld:tcp_ts=-600000:payload=tls_client_hello ^

@@ -117,10 +117,10 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset="%LISTS%ipset-all.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
---out-range=-n4 ^
+--out-range=-d4 ^
 --payload=tls_client_hello,unknown ^
 --lua-desync=fake:blob=tls_google:tls_mod=rnd,dupsid,sni=www.google.com:repeats=8:tcp_ts=-600000:payload=tls_client_hello,unknown ^
---lua-desync=multisplit:pos=1:seqovl=670:seqovl_pattern=tls_google:payload=tls_client_hello,unknown ^
+--lua-desync=multisplit:pos=1:seqovl=670:seqovl_pattern=tls_google:payload=tls_client_hello ^
 --payload=http_req ^
 --lua-desync=fake:blob=tls_google:tls_mod=rnd,dupsid,sni=www.google.com:repeats=8:tcp_ts=-600000 ^
 --lua-desync=multisplit:pos=1:seqovl=670:seqovl_pattern=tls_google ^

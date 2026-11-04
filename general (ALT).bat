@@ -22,7 +22,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --blob=quic_google:@"%BIN%quic_initial_www_google_com.bin" ^
 --blob=discord_udp:@"%BIN%ACTIVE_DISCORD_UDP.bin" ^
 --blob=tls_google:@"%BIN%tls_clienthello_www_google_com.bin" ^
---blob=stun_bin:@"%BIN%stun.bin" ^
+--blob=stun1:@"%BIN%stun.bin" ^
 --blob=quic_yandex:@"%BIN%quic_initial_quic_egress_yandex_net_no_kyber_ff.bin" ^
 --blob=game_udp:@"%BIN%ACTIVE_GAME_UDP.bin" ^
 --wf-tcp-out=80,443,2053,2083,2087,2096,8443,%GameFilterTCP% ^
@@ -73,7 +73,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
---lua-desync=fake:blob=stun_bin:repeats=6:tcp_ts=-600000 ^
+--lua-desync=fake:blob=stun1:repeats=6:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_google:repeats=6:tcp_ts=-600000 ^
 --lua-desync=fakedsplit:pattern=0x00:tcp_ts=-600000:ip_id=zero ^
 --payload=http_req ^
@@ -100,7 +100,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
---lua-desync=fake:blob=stun_bin:repeats=6:tcp_ts=-600000 ^
+--lua-desync=fake:blob=stun1:repeats=6:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_google:repeats=6:tcp_ts=-600000 ^
 --lua-desync=fakedsplit:pattern=0x00:tcp_ts=-600000:ip_id=zero ^
 --payload=http_req ^
@@ -120,9 +120,9 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset="%LISTS%ipset-all.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
---out-range=-n4 ^
+--out-range=-d4 ^
 --payload=tls_client_hello,unknown ^
---lua-desync=fake:blob=stun_bin:repeats=6:tcp_ts=-600000:payload=tls_client_hello,unknown ^
+--lua-desync=fake:blob=stun1:repeats=6:tcp_ts=-600000:payload=tls_client_hello,unknown ^
 --lua-desync=fake:blob=tls_google:repeats=6:tcp_ts=-600000:payload=tls_client_hello,unknown ^
 --lua-desync=fakedsplit:pattern=0x00:tcp_ts=-600000:ip_id=zero:payload=tls_client_hello ^
 --payload=http_req ^

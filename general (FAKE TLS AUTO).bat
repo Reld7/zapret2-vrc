@@ -111,10 +111,10 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset="%LISTS%ipset-all.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
---out-range=-n4 ^
+--out-range=-d4 ^
 --payload=tls_client_hello,http_req,unknown ^
 --lua-desync=fake:blob=tls_google:tls_mod=rnd,dupsid,sni=www.google.com:repeats=11:tcp_seq=2:tcp_ack=-66000:tcp_ts_up:payload=tls_client_hello,http_req,unknown ^
---lua-desync=multidisorder:pos=1,midsld ^
+--lua-desync=multidisorder:pos=1,midsld:payload=tls_client_hello,http_req ^
 --new ^
 
 --name="gamefilterudp" ^
