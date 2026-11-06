@@ -56,7 +56,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --payload=tls_client_hello ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakeddisorder:pos=2:seqovl=672:seqovl_pattern=tls_okcdn:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
 --name="youtube" ^
@@ -64,7 +64,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --hostlist="%LISTS%list-google.txt" ^
 --payload=tls_client_hello ^
 --lua-desync=fake:blob=tls_google:tls_mod=rnd,dupsid,sni=www.google.com:repeats=8:tcp_ts=-600000:ip_id=zero ^
---lua-desync=fakeddisorder:pos=1:seqovl=670:seqovl_pattern=tls_google:pattern=tls_google:tcp_ts=-600000:ip_id=zero ^
+--lua-desync=fakeddisorder:pos=1:pattern=tls_google:tcp_ts=-600000:ip_id=zero ^
 --new ^
 
 --name="domain tls" ^
@@ -78,11 +78,11 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --payload=tls_client_hello ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakeddisorder:pos=2:seqovl=672:seqovl_pattern=tls_okcdn:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --payload=http_req ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakeddisorder:pos=2:seqovl=672:seqovl_pattern=tls_okcdn:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
 --name="ip quic" ^
@@ -106,11 +106,11 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --payload=tls_client_hello ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakeddisorder:pos=2:seqovl=672:seqovl_pattern=tls_okcdn:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --payload=http_req ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakeddisorder:pos=2:seqovl=672:seqovl_pattern=tls_okcdn:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
 --name="photonengine udp" ^
@@ -129,11 +129,11 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --payload=tls_client_hello,unknown ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000:payload=tls_client_hello,unknown ^
 --lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000:payload=tls_client_hello,unknown ^
---lua-desync=fakeddisorder:pos=2:seqovl=672:seqovl_pattern=tls_okcdn:pattern=tls_okcdn:tcp_ts=-600000:payload=tls_client_hello ^
+--lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000:payload=tls_client_hello ^
 --payload=http_req ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakeddisorder:pos=2:seqovl=672:seqovl_pattern=tls_okcdn:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
 --name="gamefilterudp" ^
