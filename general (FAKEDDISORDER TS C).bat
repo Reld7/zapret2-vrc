@@ -95,7 +95,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --payload=http_req ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakeddisorder:pos=2:seqovl=672:seqovl_pattern=tls_okcdn:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
 --name="ip quic" ^
@@ -128,7 +128,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --payload=http_req ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakeddisorder:pos=2:seqovl=672:seqovl_pattern=tls_okcdn:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
 --name="photonengine udp" ^
@@ -159,7 +159,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --payload=http_req ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
 --lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakeddisorder:pos=2:seqovl=672:seqovl_pattern=tls_okcdn:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
 --name="gamefilterudp" ^
