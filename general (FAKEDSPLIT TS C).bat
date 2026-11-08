@@ -94,8 +94,8 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --lua-desync=fakedsplit:pos=2:pattern=tls_gov_kyber:tcp_ts=-600000 ^
 --payload=http_req ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakedsplit:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_gov:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fakedsplit:pos=2:pattern=tls_gov:tcp_ts=-600000 ^
 --new ^
 
 --name="ip quic" ^
@@ -127,8 +127,8 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --lua-desync=fakedsplit:pos=2:pattern=tls_gov_kyber:tcp_ts=-600000 ^
 --payload=http_req ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakedsplit:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_gov:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fakedsplit:pos=2:pattern=tls_gov:tcp_ts=-600000 ^
 --new ^
 
 --name="photonengine udp" ^
@@ -158,8 +158,8 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --lua-desync=fakedsplit:pos=2:pattern=tls_gov_kyber:tcp_ts=-600000 ^
 --payload=http_req ^
 --lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
---lua-desync=fakedsplit:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_gov:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fakedsplit:pos=2:pattern=tls_gov:tcp_ts=-600000 ^
 --new ^
 
 --name="gamefilterudp" ^
