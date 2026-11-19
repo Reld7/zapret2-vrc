@@ -54,8 +54,8 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --filter-tcp=2053,2083,2087,2096,8443 ^
 --hostlist-domains=discord.media ^
 --payload=tls_client_hello ^
---lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fake:blob=stun1:repeats=5:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_okcdn:repeats=5:tcp_ts=-600000 ^
 --lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
@@ -76,12 +76,12 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
---lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fake:blob=stun1:repeats=5:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_okcdn:repeats=5:tcp_ts=-600000 ^
 --lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --payload=http_req ^
---lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fake:blob=stun1:repeats=5:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_okcdn:repeats=5:tcp_ts=-600000 ^
 --lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
@@ -104,12 +104,12 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude.txt" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
---lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fake:blob=stun1:repeats=5:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_okcdn:repeats=5:tcp_ts=-600000 ^
 --lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --payload=http_req ^
---lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fake:blob=stun1:repeats=5:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_okcdn:repeats=5:tcp_ts=-600000 ^
 --lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
@@ -127,12 +127,12 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --out-range=-d4 ^
 --payload=tls_client_hello,unknown ^
---lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000:payload=tls_client_hello,unknown ^
---lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000:payload=tls_client_hello,unknown ^
+--lua-desync=fake:blob=stun1:repeats=5:tcp_ts=-600000:payload=tls_client_hello,unknown ^
+--lua-desync=fake:blob=tls_okcdn:repeats=5:tcp_ts=-600000:payload=tls_client_hello,unknown ^
 --lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000:payload=tls_client_hello ^
 --payload=http_req ^
---lua-desync=fake:blob=stun1:repeats=8:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_okcdn:repeats=8:tcp_ts=-600000 ^
+--lua-desync=fake:blob=stun1:repeats=5:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_okcdn:repeats=5:tcp_ts=-600000 ^
 --lua-desync=fakeddisorder:pos=2:pattern=tls_okcdn:tcp_ts=-600000 ^
 --new ^
 
