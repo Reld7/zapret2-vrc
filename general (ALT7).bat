@@ -15,7 +15,7 @@ set "WD=%~dp0windivert.filter\"
 set "LUA=%~dp0lua\"
 cd /d %BIN%
 
-start "zapret2: %~n0" /min "%BIN%winws2.exe" --wf-tcp-empty=1 ^
+start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --lua-init=@"%LUA%zapret-lib.lua" ^
 --lua-init=@"%LUA%zapret-antidpi.lua" ^
 --lua-init=@"%LUA%zapret-auto.lua" ^
