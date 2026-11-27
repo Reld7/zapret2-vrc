@@ -23,7 +23,7 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --blob=quic_yandex:@"%BIN%quic_initial_quic_egress_yandex_net_no_kyber_ff.bin" ^
 --blob=discord_udp:@"%BIN%ACTIVE_DISCORD_UDP.bin" ^
 --blob=tls_google:@"%BIN%tls_clienthello_www_google_com.bin" ^
---blob=tls_4pda:@"%BIN%tls_clienthello_4pda_to.bin" ^
+--blob=tls_gov:@"%BIN%tls_clienthello_lk_zakupki_gov_ru_no_kyber_gost_yandex.bin" ^
 --blob=stun1:@"%BIN%stun.bin" ^
 --blob=game_udp:@"%BIN%ACTIVE_GAME_UDP.bin" ^
 --wf-tcp-out=80,443,2053,2083,2087,2096,8443,%GameFilterTCP% ^
@@ -73,9 +73,9 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
 --lua-desync=fake:blob=stun1:repeats=6:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_4pda:repeats=6:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_gov:repeats=6:tcp_ts=-600000 ^
 --payload=http_req ^
---lua-desync=fake:blob=tls_4pda:repeats=6:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_gov:repeats=6:tcp_ts=-600000 ^
 --new ^
 
 --name="ip quic" ^
@@ -98,9 +98,9 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --ipset-exclude="%LISTS%ipset-exclude-user.txt" ^
 --payload=tls_client_hello ^
 --lua-desync=fake:blob=stun1:repeats=6:tcp_ts=-600000 ^
---lua-desync=fake:blob=tls_4pda:repeats=6:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_gov:repeats=6:tcp_ts=-600000 ^
 --payload=http_req ^
---lua-desync=fake:blob=tls_4pda:repeats=6:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_gov:repeats=6:tcp_ts=-600000 ^
 --new ^
 
 --name="photonengine udp" ^
@@ -118,9 +118,9 @@ start "zapret2: %~n0" /min "%BIN%winws2.exe" ^
 --out-range=-d3 ^
 --payload=tls_client_hello,unknown ^
 --lua-desync=fake:blob=stun1:repeats=6:tcp_ts=-600000:payload=tls_client_hello,unknown ^
---lua-desync=fake:blob=tls_4pda:repeats=6:tcp_ts=-600000:payload=tls_client_hello,unknown ^
+--lua-desync=fake:blob=tls_gov:repeats=6:tcp_ts=-600000:payload=tls_client_hello,unknown ^
 --payload=http_req ^
---lua-desync=fake:blob=tls_4pda:repeats=6:tcp_ts=-600000 ^
+--lua-desync=fake:blob=tls_gov:repeats=6:tcp_ts=-600000 ^
 --new ^
 
 --name="gamefilterudp" ^
