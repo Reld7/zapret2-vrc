@@ -13,7 +13,6 @@
 Процесс запуска идентичен оригинальному руководству от [flowseal/zapret-discord-youtube](https://github.com/flowseal/zapret-discord-youtube#%EF%B8%8F%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
 
 ## Изменения
-- Все стратегии адаптированы под синтаксис zapret 2
 - В `list-general` добавлены домены vrchat
 - Добавлен фильтр windivert для photon engine
 - Часть фейков заменена на сгенерированные из firefox
