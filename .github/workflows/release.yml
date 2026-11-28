@@ -6,6 +6,11 @@ on:
       tag:
         description: 'Release tag (= .service/version.txt = LOCAL_VERSION в service.bat)'
         required: true
+      prerelease:
+        description: 'Pre-release'
+        type: boolean
+        required: false
+        default: false
 
 jobs:
   release:
@@ -21,6 +26,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Verify version
+        if: ${{ !inputs.prerelease }}
         run: |
           FILE_VERSION=$(tr -d '\r\n' < .service/version.txt)
           SERVICE_VERSION=$(grep -m1 -oP '(?<=set "LOCAL_VERSION=)[^"]+' service.bat | tr -d '\r')
@@ -48,6 +54,7 @@ jobs:
         with:
           tag_name: ${{ env.TAG }}
           name: ${{ env.TAG }}
+          prerelease: ${{ inputs.prerelease }}
           generate_release_notes: true
           files: |
             ${{ env.NAME }}.zip
